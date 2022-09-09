@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site Netlify : [Demonstration](https://pannetouch-product-preview-card-component-main.netlify.app/)
+- Live Site URL : [Demonstration](https://pannetouch-product-preview-card.netlify.app)
 
 ## My process
 

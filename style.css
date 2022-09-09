@@ -29,14 +29,26 @@ body {
   margin: 0;
   background-color: var(--secondary);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 main {
-  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--dark-blue-main);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+footer {
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  float: none;
+  margin: auto;
+  width: 100%;
 }
 
 span,
@@ -47,20 +59,21 @@ p {
   line-height: 1.5rem;
 }
 
+p {
+  margin: 0 0 1.4rem 0;
+}
+
 h1 {
   font-family: Fraunces;
   font-weight: 700;
-  font-size: 1.9rem;
-  line-height: 1.9rem;
+  font-size: 2rem;
+  line-height: 1;
   color: var(--dark-blue);
   overflow-wrap: break-word;
+  margin: 0.4rem 0 0.8rem 0;
 }
 
 /* CARD */
-.my-1 {
-  margin: 1rem 0;
-}
-
 .mt-1 {
   margin-top: 1rem;
 }
@@ -72,26 +85,24 @@ h1 {
   overflow: hidden;
   display: flex;
   width: 100%;
+  margin: 1rem;
   max-width: 40rem;
   min-width: 12.5rem;
   flex-direction: column;
 }
 
 .card .tag {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
 .card .card-image {
-  flex: 1;
-  padding: 2rem;
-  background-color: var(--primary);
   background-image: url(./images/image-product-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 15rem;
+  min-height: 240px;
   width: 100%;
 }
 
@@ -100,7 +111,8 @@ h1 {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .prices {
@@ -111,12 +123,13 @@ h1 {
 }
 
 .prices span {
-  margin: auto 0.5rem;
+  line-height: 2.25rem;
+  margin-right: 1rem;
 }
 
 .prices span:first-child {
   color: var(--primary);
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-family: Fraunces;
   font-weight: bold;
 }
@@ -128,8 +141,7 @@ h1 {
 /* RESPONSIVE */
 @media (min-width: 527px) {
   h1 {
-    font-size: 2.5rem;
-    line-height: 2.4rem;
+    margin: 0.8rem 0 1.6rem 0;
   }
 
   .card {
@@ -141,6 +153,15 @@ h1 {
     background-image: url(./images/image-product-desktop.jpg);
     min-height: 100%;
   }
+
+  .card .card-content {
+    padding: 2rem;
+    max-width: 300px;
+  }
+
+  .prices {
+    margin-bottom: 1rem;
+  }
 }
 
 /* BUTTON */
@@ -149,7 +170,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 0.5rem;
   text-align: center;
   font-weight: bold;
@@ -174,13 +195,14 @@ h1 {
 
 /* ATTRIBUTION */
 .attribution {
-  margin: 0.5rem 0;
+  font-family: roboto;
   font-size: 0.75rem;
   text-align: center;
+  color: var(--primary);
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--dark-blue);
 }
 
 /* MISC  */
